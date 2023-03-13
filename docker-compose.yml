@@ -1,0 +1,19 @@
+version: "3.7"
+services:
+  user-mananement:
+    build: .
+    restart: always
+    ports:
+      - 8083:8083
+    depends_on:
+      - mysql_db
+  mysql_db:
+    image: "mysql:8.0"
+    restart: always
+    ports:
+      - 3307:3306
+    environment:
+      MYSQL_DATABASE: mydb
+      MYSQL_USER: poli
+      MYSQL_PASSWORD: poli@2023
+      MYSQL_ROOT_PASSWORD: Sosisora@12
